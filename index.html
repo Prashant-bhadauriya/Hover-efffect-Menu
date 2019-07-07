@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+    <title>Stylish Menu Hover Effect</Menu></title>
+</head>
+<body>
+       
+        <!-- count particles -->
+<div class="count-particles"></div>
+      
+      <!-- particles.js container -->
+      <div id="particles-js">  <ul> 
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">PORTFOLIO</a></li>
+        <li><a href="#">OUR TEAM</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul></div>
+    <script src="particles.min.js"></script>
+    <script src="app.js"></script>
+    <script src="js/stats.js"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+   
+</body>
+</html>
